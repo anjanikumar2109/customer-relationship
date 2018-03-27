@@ -1,0 +1,18 @@
+<section class="sample-app-content">
+  <h1>Template-driven Form Example:</h1>
+  <form #f="ngForm" (ngSubmit)="onSubmitTemplateBased()">
+    <p>
+      <label>First Name:</label>
+      <input matInput type="text" name="FirstName"
+             [(ngModel)]="user.firstName" required placeholder="First Name">
+    </p>
+    <p>
+      <label>Password:</label>
+      <input matInput type="password" name="Password"
+             [(ngModel)]="user.password" required placeholder="Password">
+    </p>
+    <p>
+      <button mat-raised-button type="submit" [disabled]="!f.valid">Submit</button>
+    </p>
+  </form>
+</section>

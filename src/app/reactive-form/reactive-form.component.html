@@ -1,0 +1,16 @@
+<section class="sample-app-content">
+  <h1>Model-based Form Example:</h1>
+  <form [formGroup]="form" (ngSubmit)="onSubmitModelBased()">
+    <p>
+      <label>First Name:</label>
+      <input matInput type="text" formControlName="firstName" placeholder="First Name">
+    </p>
+    <p>
+      <label>Password:</label>
+      <input matInput type="password" formControlName="password" placeholder="Password">
+    </p>
+    <p>
+      <button mat-raised-button type="submit" [disabled]="!form.valid">Submit</button>
+    </p>
+  </form>
+</section>
