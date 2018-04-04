@@ -10,6 +10,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { TemplateFormComponent } from './template-form/template-form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { HeaderComponent } from './header/header.component';
+import { AuthGuard } from './shared/guards/auth-guard.service';
+import { CanDeactivateGuard } from './shared/guards/can-deactivate-guard.service';
 
 
 @NgModule({
@@ -28,7 +30,7 @@ import { HeaderComponent } from './header/header.component';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [AuthGuard, CanDeactivateGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
