@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import { AuthGuard } from '../shared/guards/auth-guard.service';
+import { GenericHttpInterceptor } from '../shared/interceptors/http.interceptor';
+import { BlobErrorHttpInterceptor } from '../shared/interceptors/blob-error-http.interceptor';
 
 const routes: Routes = [
   { path: 'customers', canActivate: [AuthGuard], loadChildren: 'app/customers/customers.module#CustomersModule' },
@@ -20,6 +23,18 @@ const routes: Routes = [
   exports: [
     RouterModule,
   ],
-  declarations: []
+  declarations: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: GenericHttpInterceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: BlobErrorHttpInterceptor,
+      multi: true
+    }
+  ],
 })
 export class AppRoutingModule { }

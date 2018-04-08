@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
 
 import { SearchRoutingModule } from './search-routing.module';
 import { MaterialModule } from '../material/material.module';
@@ -10,7 +9,6 @@ import { SearchService } from './search.service';
 @NgModule({
   imports: [
     CommonModule,
-    HttpClientModule,
     SearchRoutingModule,
     MaterialModule,
   ],
