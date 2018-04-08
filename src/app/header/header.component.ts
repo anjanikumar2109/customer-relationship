@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {ApplicationRef, Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,8 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  name = 'CRM';
 
-  constructor() { }
+  constructor(app: ApplicationRef) {
+    setTimeout(() => {
+      this.name = 'CRM Application';
+      app.tick(); // This triggers change detection
+    }, 1000);
+  }
 
   ngOnInit() {
   }
