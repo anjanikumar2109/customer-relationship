@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CustomersRoutingModule } from './customers-routing.module';
 import { MaterialModule } from '../material/material.module';
 import { CustomerListComponent } from './customer-list/customer-list.component';
-import {CustomerService} from './customer.service';
+import { CustomerService } from './customer.service';
 
 @NgModule({
   imports: [
