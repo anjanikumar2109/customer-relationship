@@ -12,6 +12,7 @@ const routes: Routes = [
   { path: 'customers', canActivate: [AuthGuard], loadChildren: 'app/customers/customers.module#CustomersModule' },
   { path: 'orders', canActivate: [AuthGuard], loadChildren: 'app/orders/orders.module#OrdersModule' },
   { path: 'search', loadChildren: 'app/search/search.module#SearchModule' },
+  { path: 'dynamic', loadChildren: 'app/dynamic/dynamic.module#DynamicModule' },
   { path: '', redirectTo: '', pathMatch: 'full', component: DashboardComponent },
 ];
 
