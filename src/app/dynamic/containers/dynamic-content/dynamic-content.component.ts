@@ -1,6 +1,7 @@
 import {
   Component, ComponentFactoryResolver, ComponentRef, Input, OnDestroy, OnInit, ViewChild, ViewContainerRef,
 } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 
 import { FirstComponent } from '../../components/first/first.component';
 import { SecondComponent } from '../../components/second/second.component';
@@ -32,7 +33,8 @@ export class DynamicContentComponent implements OnInit, OnDestroy {
     return this.mappings[typeName] || UnknownComponent;
   }
 
-  constructor(private componentFactoryResolver: ComponentFactoryResolver) {
+  constructor(private componentFactoryResolver: ComponentFactoryResolver,
+              private sanitizer: DomSanitizer) {
   }
 
   ngOnInit() {
@@ -55,3 +57,26 @@ export class DynamicContentComponent implements OnInit, OnDestroy {
   }
 
 }
+
+abstract class Animal {
+  abstract gender(): string;
+}
+
+class Goat extends Animal {
+
+  constructor() {
+    super();
+  }
+  gender(): string {
+    return 'male';
+  }
+
+  jump(): void {
+    console.log('Jump invoked');
+  }
+}
+
+let animal: Goat;
+animal = new Goat();
+animal.jump();
+console.log(animal.gender());
