@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/of';
 import { DataSource } from '@angular/cdk/collections';
 import { CanDeactivate } from '@angular/router';
+import { Observable } from 'rxjs/Rx';
 
 import { CustomerService } from '../customer.service';
 import { CustomerModel } from '../customer.model';

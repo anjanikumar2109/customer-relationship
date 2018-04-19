@@ -1,8 +1,7 @@
 import { HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import 'rxjs/add/observable/throw';
 import { catchError } from 'rxjs/operators';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs/Rx';
 
 @Injectable()
 export class BlobErrorHttpInterceptor implements HttpInterceptor {
@@ -36,7 +35,7 @@ export class BlobErrorHttpInterceptor implements HttpInterceptor {
             reader.readAsText(err.error);
           });
         }
-        return Observable.throw(err);
+        return Observable.throwError(err);
       })
     );
   }

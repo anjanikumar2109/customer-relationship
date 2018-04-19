@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Rx';
+import { LibService } from 'ng-starter-lib';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,10 +11,12 @@ export class DashboardComponent implements OnInit {
   answer: string;
   showSpinner: boolean;
   answerDisplay: string;
+  quotes: Observable<any[]>;
 
-  constructor() { }
+  constructor(private libService: LibService) { }
 
   ngOnInit() {
+    this.quotes = this.libService.getRandomQuote(null, 3);
   }
 
   showAnswer() {

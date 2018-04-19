@@ -3,6 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { LibModule, LibConfig } from 'ng-starter-lib';
 
 import { AppComponent } from './app.component';
 import { MaterialModule } from './material/material.module';
@@ -14,6 +15,7 @@ import { HeaderComponent } from './header/header.component';
 import { AuthGuard } from './shared/guards/auth-guard.service';
 import { CanDeactivateGuard } from './shared/guards/can-deactivate-guard.service';
 
+let config: { quoteService: string };
 
 @NgModule({
   declarations: [
@@ -31,8 +33,13 @@ import { CanDeactivateGuard } from './shared/guards/can-deactivate-guard.service
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    LibModule,
   ],
-  providers: [AuthGuard, CanDeactivateGuard],
+  providers: [
+    AuthGuard,
+    CanDeactivateGuard,
+    { provide: LibConfig, useValue: config },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
