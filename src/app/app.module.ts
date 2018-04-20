@@ -15,7 +15,7 @@ import { HeaderComponent } from './header/header.component';
 import { AuthGuard } from './shared/guards/auth-guard.service';
 import { CanDeactivateGuard } from './shared/guards/can-deactivate-guard.service';
 
-let config: { quoteService: string };
+const config: { quoteService: string } = { quoteService: 'http://quotesondesign.com/wp-json/posts' };
 
 @NgModule({
   declarations: [

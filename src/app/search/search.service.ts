@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs/Rx';
+import { Observable } from 'rxjs';
 import { debounceTime, map, distinctUntilChanged, switchMap } from 'rxjs/operators';
 
 
@@ -14,8 +14,7 @@ export class SearchService {
   getUsers(searchText: string): Observable<any> {
     return this.http.get(`${this.baseUrl}/search/users?q=${searchText}`).pipe(
       map((res: Response) => {
-        const data = res;
-        return data;
+        return res;
       })
     );
   }

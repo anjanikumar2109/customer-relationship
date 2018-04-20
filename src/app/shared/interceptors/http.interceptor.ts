@@ -1,6 +1,6 @@
 import { HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, TimeoutError } from 'rxjs/Rx';
+import { Observable, TimeoutError, throwError } from 'rxjs';
 import { catchError, finalize } from 'rxjs/operators';
 
 @Injectable()
@@ -17,7 +17,7 @@ export class GenericHttpInterceptor implements HttpInterceptor {
         } else if (response instanceof TimeoutError) {
           console.error(response);
         }
-        return Observable.throwError(response);
+        return throwError(response);
       }),
       finalize(() => {
         console.log('done - hide loader');
