@@ -16,7 +16,6 @@ const routes: Routes = [
   { path: '', redirectTo: '', pathMatch: 'full', component: DashboardComponent },
 ];
 
-
 @NgModule({
   imports: [
     CommonModule,
