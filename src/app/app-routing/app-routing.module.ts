@@ -9,10 +9,10 @@ import { GenericHttpInterceptor } from '../shared/interceptors/http.interceptor'
 import { BlobErrorHttpInterceptor } from '../shared/interceptors/blob-error-http.interceptor';
 
 const routes: Routes = [
-  { path: 'customers', canActivate: [AuthGuard], loadChildren: 'app/customers/customers.module#CustomersModule' },
-  { path: 'orders', canActivate: [AuthGuard], loadChildren: 'app/orders/orders.module#OrdersModule' },
-  { path: 'search', loadChildren: 'app/search/search.module#SearchModule' },
-  { path: 'dynamic', loadChildren: 'app/dynamic/dynamic.module#DynamicModule' },
+  { path: 'customers', canActivate: [AuthGuard], loadChildren: () => import('../customers/customers.module').then(m => m.CustomersModule) },
+  { path: 'orders', canActivate: [AuthGuard], loadChildren: () => import('../orders/orders.module').then(m => m.OrdersModule) },
+  { path: 'search', loadChildren: () => import('../search/search.module').then(m => m.SearchModule) },
+  { path: 'dynamic', loadChildren: () => import('../dynamic/dynamic.module').then(m => m.DynamicModule) },
   { path: '', redirectTo: '', pathMatch: 'full', component: DashboardComponent },
 ];
 
