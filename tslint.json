@@ -1,6 +1,7 @@
 {
   "rulesDirectory": [
-    "node_modules/codelyzer"
+    "node_modules/codelyzer",
+    "node_modules/rxjs-tslint"
   ],
   "rules": {
     "arrow-return-shorthand": true,
@@ -125,6 +126,10 @@
     "use-life-cycle-interface": true,
     "use-pipe-transform-interface": true,
     "component-class-suffix": true,
-    "directive-class-suffix": true
+    "directive-class-suffix": true,
+    "update-rxjs-imports": true,
+    "migrate-to-pipeable-operators": true,
+    "migrate-static-observable-methods": true,
+    "collapse-rxjs-imports": true
   }
 }

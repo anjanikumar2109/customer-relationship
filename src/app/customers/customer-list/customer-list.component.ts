@@ -7,6 +7,16 @@ import { CustomerService } from '../customer.service';
 import { CustomerModel } from '../customer.model';
 import { CanComponentDeactivate } from '../../shared/guards/can-deactivate-guard.service';
 
+export class CustomerDataSource extends DataSource<any> {
+  constructor(private customerService: CustomerService) {
+    super();
+  }
+  connect(): Observable<CustomerModel[]> {
+    return this.customerService.getCustomers();
+  }
+  disconnect() {}
+}
+
 @Component({
   selector: 'app-customer-list',
   templateUrl: './customer-list.component.html',
@@ -27,14 +37,4 @@ export class CustomerListComponent implements OnInit, CanDeactivate<CanComponent
     return true;
   }
 
-}
-
-export class CustomerDataSource extends DataSource<any> {
-  constructor(private customerService: CustomerService) {
-    super();
-  }
-  connect(): Observable<CustomerModel[]> {
-    return this.customerService.getCustomers();
-  }
-  disconnect() {}
 }
