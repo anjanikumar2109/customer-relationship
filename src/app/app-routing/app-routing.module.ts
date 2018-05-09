@@ -13,6 +13,7 @@ const routes: Routes = [
   { path: 'orders', canActivate: [AuthGuard], loadChildren: () => import('../orders/orders.module').then(m => m.OrdersModule) },
   { path: 'search', loadChildren: () => import('../search/search.module').then(m => m.SearchModule) },
   { path: 'dynamic', loadChildren: () => import('../dynamic/dynamic.module').then(m => m.DynamicModule) },
+  { path: 'strategy', loadChildren: () => import('../strategy/strategy.module').then(m => m.StrategyModule) },
   { path: '', redirectTo: '', pathMatch: 'full', component: DashboardComponent },
 ];
 

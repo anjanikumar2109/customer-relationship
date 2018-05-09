@@ -1,0 +1,4 @@
+<input #newFood type="text" placeholder="Enter a new food">
+<button (click)="addFood(newFood.value)">Add food</button>
+
+<app-push-child [data]="foods"></app-push-child>
