@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { LibModule, LibConfig } from 'ng-starter-lib';
+import { AdminLibModule } from 'admin-lib';
 
 import { AppComponent } from './app.component';
 import { MaterialModule } from './material/material.module';
@@ -34,6 +35,7 @@ const config: LibConfig = { quoteService: 'http://quotesondesign.com/wp-json/pos
     FormsModule,
     ReactiveFormsModule,
     LibModule,
+    AdminLibModule,
   ],
   providers: [
     AuthGuard,
