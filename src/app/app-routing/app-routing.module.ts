@@ -14,6 +14,7 @@ const routes: Routes = [
   { path: 'search', loadChildren: () => import('../search/search.module').then(m => m.SearchModule) },
   { path: 'dynamic', loadChildren: () => import('../dynamic/dynamic.module').then(m => m.DynamicModule) },
   { path: 'strategy', loadChildren: () => import('../strategy/strategy.module').then(m => m.StrategyModule) },
+  { path: 'dynamic-control', loadChildren: () => import('../dynamic-control/dynamic-control.module').then(m => m.DynamicControlModule) },
   { path: '', redirectTo: '', pathMatch: 'full', component: DashboardComponent },
 ];
 
