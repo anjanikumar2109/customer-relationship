@@ -15,6 +15,7 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { HeaderComponent } from './header/header.component';
 import { AuthGuard } from './shared/guards/auth-guard.service';
 import { CanDeactivateGuard } from './shared/guards/can-deactivate-guard.service';
+import { ZoneDemoComponent } from './zone-demo/zone-demo.component';
 
 const config: LibConfig = { quoteService: 'http://quotesondesign.com/wp-json/posts' };
 
@@ -25,6 +26,7 @@ const config: LibConfig = { quoteService: 'http://quotesondesign.com/wp-json/pos
     TemplateFormComponent,
     ReactiveFormComponent,
     HeaderComponent,
+    ZoneDemoComponent,
   ],
   imports: [
     BrowserModule,
