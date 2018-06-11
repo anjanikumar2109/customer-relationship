@@ -15,6 +15,7 @@ const routes: Routes = [
   { path: 'dynamic', loadChildren: () => import('../dynamic/dynamic.module').then(m => m.DynamicModule) },
   { path: 'strategy', loadChildren: () => import('../strategy/strategy.module').then(m => m.StrategyModule) },
   { path: 'dynamic-control', loadChildren: () => import('../dynamic-control/dynamic-control.module').then(m => m.DynamicControlModule) },
+  { path: 'basic-table', loadChildren: () => import('../basic-table/basic-table.module').then(m => m.BasicTableModule) },
   { path: '', redirectTo: '', pathMatch: 'full', component: DashboardComponent },
 ];
 
