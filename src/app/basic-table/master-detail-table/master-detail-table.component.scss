@@ -25,3 +25,11 @@
 .element-row.expanded {
   border-bottom-color: transparent;
 }
+
+.mat-header-row {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  background-color: inherit;
+  z-index: 1;
+}
